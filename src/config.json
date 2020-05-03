@@ -1,0 +1,7 @@
+{
+    "company": "Topmac Digital",
+    "title": "dashboard telegram",
+    "api": {
+        "getJson": "http://localhost/config.json"
+    }
+}

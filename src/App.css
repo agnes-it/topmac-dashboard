@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+
+.form.container {
+  margin: 20px;
+}
+
+@media (min-width: 1024px) {
+  .form.container {
+    margin: 20px 30%;
+  }
+
+  .Collapsible {
+    width: 70%;
+  }
+}
+
+.Collapsible {
+  width: 70%;
+  border: 1px solid #3298dc;
+}
+
+.group-table {
+  width: 100%;
+}
+
+.trigger-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.control.reason .textarea {
+  margin: 20px 0;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
