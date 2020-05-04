@@ -45,3 +45,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.loader {
+  width: 100px !important;
+  height: 100px !important;
+  margin: 50px auto;
+}

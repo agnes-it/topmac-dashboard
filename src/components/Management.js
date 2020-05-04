@@ -1,23 +1,11 @@
 import React from 'react';
 import Collapsible from 'react-collapsible';
-import Modal from 'react-modal';
+import BanUserModal from './BanUserModal';
 import {
     MdArrowDownward,
     MdArrowUpward,
     MdDelete
 } from 'react-icons/md';
-import _ from 'lodash';
-
-const customStyles = {
-    content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)',
-    },
-};
 
 const mockData = [
     {
@@ -52,8 +40,6 @@ const mockData = [
     }
 ];
 
-const groupBan = (user, group) => console.log(user, group);
-
 const Management = props => {
     const [ isOpen, setOpen ] = React.useState(false);
     const [ data, setData ] = React.useState(null);
@@ -67,32 +53,14 @@ const Management = props => {
         setOpen(true);
         setData({ username, productId });
     };
-    
-    const banMember = () => {
-        const username = _.get(data, 'username', '');
-        // TODO: make groupId available here
-        const groupId = _.get(data, 'groupId');
-        groupBan(username, groupId);
-        closeModal();
-    };
 
     return (
         <React.Fragment>
-            <Modal
+            <BanUserModal
                 isOpen={isOpen}
-                onRequestClose={closeModal}
-                style={customStyles}
-                shouldCloseOnOverlayClick
-            >
-                <h2>{`Descreva para o usuario o motivo do banimento`}</h2>
-                <div className="control reason">
-                    <textarea className="textarea"></textarea>
-                </div>
-                <div className="action-buttons">
-                    <button onClick={banMember} className="button is-primary">Confirmar</button>
-                    <button onClick={closeModal} className="button is-secondary">Cancelar</button>
-                </div>
-            </Modal>
+                data={data}
+                closeModal={closeModal}
+            />
             {mockData.map(group => {
                 return (
                     <React.Fragment key={group.productId}>

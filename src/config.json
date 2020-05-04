@@ -2,6 +2,7 @@
     "company": "Topmac Digital",
     "title": "dashboard telegram",
     "api": {
-        "getJson": "http://localhost/config.json"
+        "getJson": "https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/get-config",
+        "save": "https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/get-config"
     }
 }

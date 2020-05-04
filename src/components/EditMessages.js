@@ -1,13 +1,58 @@
 import React from 'react';
+import config from '../config.json';
+import Loader from './Loader';
+import Modal from 'react-modal';
 
 const EditMessages = ({ shouldWarn, setShouldWarn }) => {
-    const onChange = () => {
-        if (!shouldWarn) setShouldWarn(true);
+    const [ loading, setLoading ] = React.useState(true);
+    
+    React.useEffect(() => {
+        fetch(config.api.getJson)
+            .then(res => res.json())
+            .then(
+                ({ body }) => {
+                    Object.keys(body).forEach(key => {
+                        const field = document.querySelector(`#${key}`);
+                        if (!field) return;
+                            field.value = body[key];
+                        });
+                        
+                    }
+                    ).catch((err) => {
+                        throw(err);
+                    }
+        );
+
+        setLoading(false);
+    }, [loading]);
+    
+    const onSubmit = React.useCallback(async (event) => {
+        event.persist();
+        event.preventDefault();
+        setShouldWarn(false);
+        let body = {};
+        new FormData(event.target).forEach((value, key) => body[key] = value);
+        const saveUrl = 'https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/save-config';
+        await fetch(saveUrl, { method: 'POST', body: JSON.stringify(body) }).then(res => res.json());
+        window.alert("dados salvos com sucesso!");
+    }, [setShouldWarn]);
+
+    if (loading) {
+        return <Loader />;
     }
 
+    const onChange = (event) => {
+        event.persist();
+        if (!shouldWarn) setShouldWarn(true);
+        console.log(event.target);
+    };
+    
     return (
         <div className="form container has-text-left ">
-            <form onChange={onChange} className="is-left" action="" method="get">
+            <form
+                onChange={onChange}
+                onSubmit={onSubmit}
+                className="is-left">
                 <h1 className="title">Geral:</h1>
                 <div className="field">
                     <label className="label">Usuários Blindados (separados por vírgula)</label>
@@ -76,7 +121,7 @@ const EditMessages = ({ shouldWarn, setShouldWarn }) => {
                 <div className="field">
                     <label className="label">botão de compartilhamento de número</label>
                     <div className="control">
-                        <textarea name="shared_button" id="shared_button" className="textarea" type="text" placeholder="insira aqui seu text" />
+                        <textarea name="share_button" id="share_button" className="textarea" type="text" placeholder="insira aqui seu text" />
                     </div>
                 </div>
 
