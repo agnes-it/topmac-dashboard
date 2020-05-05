@@ -3,6 +3,7 @@
     "title": "dashboard telegram",
     "api": {
         "getJson": "https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/get-config",
-        "save": "https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/get-config"
+        "save": "https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/get-config",
+        "getAllUsers": "https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/get-all-users"
     }
 }
