@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/topmac-dashboard/precache-manifest.a77b2a5ece76014980d204cd0ff5ef0f.js"
+  "/topmac-dashboard/precache-manifest.4e205177a6a216608f9fbf0713a71de4.js"
 );
 
 self.addEventListener('message', (event) => {
