@@ -518,7 +518,7 @@ module.exports = function(webpackEnv) {
           },
           isEnvProduction
             ? {
-                base: "http://agnes-it.github.io/topmac-dashboard/",
+                base: "https://agnes-it.github.io/topmac-dashboard/",
                 minify: {
                   removeComments: true,
                   collapseWhitespace: true,
