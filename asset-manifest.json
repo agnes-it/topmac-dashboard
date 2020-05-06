@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/topmac-dashboard/static/css/main.c653f7e3.chunk.css",
+    "main.js": "/topmac-dashboard/static/js/main.436301cf.chunk.js",
+    "main.js.map": "/topmac-dashboard/static/js/main.436301cf.chunk.js.map",
+    "runtime-main.js": "/topmac-dashboard/static/js/runtime-main.38504221.js",
+    "runtime-main.js.map": "/topmac-dashboard/static/js/runtime-main.38504221.js.map",
+    "static/css/2.a2c18f5e.chunk.css": "/topmac-dashboard/static/css/2.a2c18f5e.chunk.css",
+    "static/js/2.5b1b809a.chunk.js": "/topmac-dashboard/static/js/2.5b1b809a.chunk.js",
+    "static/js/2.5b1b809a.chunk.js.map": "/topmac-dashboard/static/js/2.5b1b809a.chunk.js.map",
+    "index.html": "/topmac-dashboard/index.html",
+    "precache-manifest.a77b2a5ece76014980d204cd0ff5ef0f.js": "/topmac-dashboard/precache-manifest.a77b2a5ece76014980d204cd0ff5ef0f.js",
+    "service-worker.js": "/topmac-dashboard/service-worker.js",
+    "static/css/2.a2c18f5e.chunk.css.map": "/topmac-dashboard/static/css/2.a2c18f5e.chunk.css.map",
+    "static/css/main.c653f7e3.chunk.css.map": "/topmac-dashboard/static/css/main.c653f7e3.chunk.css.map",
+    "static/js/2.5b1b809a.chunk.js.LICENSE.txt": "/topmac-dashboard/static/js/2.5b1b809a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.38504221.js",
+    "static/css/2.a2c18f5e.chunk.css",
+    "static/js/2.5b1b809a.chunk.js",
+    "static/css/main.c653f7e3.chunk.css",
+    "static/js/main.436301cf.chunk.js"
+  ]
+}
