@@ -10,39 +10,6 @@ import Loader from './Loader';
 import _ from 'lodash';
 import { api } from '../config.json';
 
-const mockData = [
-    {
-        productId: 1,
-        productName: "TOPMAC DIGITAL PRODUTO 1",
-        users: [
-            { username: "netoguimaraes", status: "active" },
-            { username: "stefan", status: "delayed" },
-            { username: "vbarcelos", status: "expired" },
-            { username: "neto2", status: "canceled" },
-        ]
-    },
-    {
-        productId: 2,
-        productName: "TOPMAC DIGITAL PRODUTO 2",
-        users: [
-            { username: "netoguimaraes", status: "active" },
-            { username: "stefan", status: "delayed" },
-            { username: "vbarcelos", status: "expired" },
-            { username: "neto2", status: "canceled" },
-        ]
-    },
-    {
-        productId: 3,
-        productName: "TOPMAC DIGITAL PRODUTO 3",
-        users: [
-            { username: "netoguimaraes", status: "active" },
-            { username: "stefan", status: "delayed" },
-            { username: "vbarcelos", status: "expired" },
-            { username: "neto2", status: "canceled" },
-        ]
-    }
-];
-
 const Management = props => {
     const [ isOpen, setOpen ] = React.useState(false);
     const [ data, setData ] = React.useState(null);
@@ -53,9 +20,9 @@ const Management = props => {
         setData(null);
     };
     
-    const onDelete = (username, productId) => {
+    const onDelete = (userId, groupId) => {
         setOpen(true);
-        setData({ username, productId });
+        setData({ userId, groupId });
     };
 
     React.useEffect(() => {
@@ -130,14 +97,14 @@ const GroupTable = ({ users, id, onDelete }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map(({ phone_number, active }) => (
+                    {users.filter(user => !user.removed).map(({ phone_number, active, user_id }) => (
                         <tr key={phone_number}>
                             <td>{phone_number}</td>
                             <td><span className={`tag ${active ? 'is-success' : 'is-danger'}`}>{active ? 'ativo' : 'inativo'}</span></td>
                             <td>
                                 <MdDelete
                                     className="icon"
-                                    onClick={() => onDelete(phone_number, id)} />
+                                    onClick={() => onDelete(user_id, id)} />
                             </td>
                         </tr>
                     ))}

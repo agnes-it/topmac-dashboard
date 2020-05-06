@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import _ from 'lodash';
+import { api } from '../config.json';
 
 const customStyles = {
     content : {
@@ -12,16 +13,39 @@ const customStyles = {
         transform             : 'translate(-50%, -50%)',
     },
 };
-const groupBan = (user, group) => console.log(user, group);
+const groupBan = async (userId, groupId, reason) => {
+    await fetch(
+        api.banUserById,
+        {
+            method: 'POST',
+            body: JSON.stringify({ userId, groupId, reason })
+        }
+    ).then((res) => {
+        console.log(res)
+        if (res && res.data && !res.data.ok) {
+            alert("problema ao deletar o usuario, contate o suporte!");
+        } else {
+            alert("usuario deletado com sucesso!");
+            window.location.reload();
+        }
+    });
+    console.log(userId, groupId);
+}
 
 const BanUserModal = ({ isOpen, closeModal, data }) => {
+    const [ reason, setReason ] = React.useState(null);
     const banMember = () => {
-        const username = _.get(data, 'username', '');
+        const userId = _.get(data, 'userId', '');
         // TODO: make groupId available here
         const groupId = _.get(data, 'groupId');
-        groupBan(username, groupId);
+        groupBan(userId, groupId, reason);
         closeModal();
     };
+
+    const onChange = event => {
+        event.persist();
+        setReason(event.target.value);
+    }
 
     return (
         <Modal
@@ -32,7 +56,7 @@ const BanUserModal = ({ isOpen, closeModal, data }) => {
         >
             <h2>{`Descreva para o usuario o motivo do banimento`}</h2>
             <div className="control reason">
-                <textarea className="textarea"></textarea>
+                <textarea onChange={onChange} className="textarea"></textarea>
             </div>
             <div className="action-buttons">
                 <button onClick={banMember} className="button is-primary">Confirmar</button>
