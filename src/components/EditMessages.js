@@ -7,22 +7,24 @@ const EditMessages = ({ shouldWarn, setShouldWarn }) => {
     const [ loading, setLoading ] = React.useState(true);
     
     React.useEffect(() => {
-        fetch(config.api.getJson)
-            .then(res => res.json())
-            .then(
-                ({ body }) => {
-                    Object.keys(body).forEach(key => {
-                        const field = document.querySelector(`#${key}`);
-                        if (!field) return;
-                            field.value = body[key];
-                        });
-                        
-                    }
-                    ).catch((err) => {
-                        throw(err);
-                    }
-        );
-
+        async function getData() {
+            await fetch(config.api.getJson)
+                .then(res => res.json())
+                .then(
+                    ({ body }) => {
+                        Object.keys(body).forEach(key => {
+                            const field = document.querySelector(`#${key}`);
+                            if (!field) return;
+                                field.value = body[key];
+                            });
+                            
+                        }
+                        ).catch((err) => {
+                            throw(err);
+                        }
+                    );
+        }
+        getData();
         setLoading(false);
     }, [loading]);
     

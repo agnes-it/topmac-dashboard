@@ -4,7 +4,7 @@ import BanUserModal from './BanUserModal';
 import {
     MdArrowDownward,
     MdArrowUpward,
-    MdDelete
+    MdRemoveCircle
 } from 'react-icons/md';
 import Loader from './Loader';
 import _ from 'lodash';
@@ -92,22 +92,28 @@ const GroupTable = ({ users, id, onDelete }) => {
                 <thead>
                     <tr>
                         <th>usuário</th>
+                        <th>nome</th>
+                        <th>telefone</th>
                         <th>estado</th>
                         <th>ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {users.filter(user => !user.removed).map(({ phone_number, active, user_id }) => (
-                        <tr key={phone_number}>
-                            <td>{phone_number}</td>
-                            <td><span className={`tag ${active ? 'is-success' : 'is-danger'}`}>{active ? 'ativo' : 'inativo'}</span></td>
-                            <td>
-                                <MdDelete
-                                    className="icon"
-                                    onClick={() => onDelete(user_id, id)} />
-                            </td>
-                        </tr>
-                    ))}
+                    {users.filter(user => !user.removed).map(({ phone_number, active, user_id, user }) => {
+                        return (
+                            <tr key={phone_number}>
+                                <td>@{user.username}</td>
+                                <td>{user.first_name}</td>
+                                <td>{phone_number}</td>
+                                <td><span className={`tag ${active ? 'is-success' : 'is-danger'}`}>{active ? 'ativo' : 'inativo'}</span></td>
+                                <td>
+                                    <MdRemoveCircle
+                                        className="icon"
+                                        onClick={() => onDelete(user_id, id)} />
+                                </td>
+                            </tr>
+                        )
+                    })}
                 </tbody>
             </table>
         </div>
