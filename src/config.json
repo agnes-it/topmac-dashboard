@@ -2,9 +2,9 @@
     "company": "Topmac Digital",
     "title": "dashboard telegram",
     "api": {
-        "getJson": "https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/get-config",
-        "save": "https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/get-config",
-        "getAllUsers": "https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/get-all-users",
-        "banUserById": "https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/ban-user-by-id"
+        "getJson": "https://9ia11njxu4.execute-api.us-east-1.amazonaws.com/dev/get-config",
+        "save": "https://9ia11njxu4.execute-api.us-east-1.amazonaws.com/dev/save-config",
+        "getAllUsers": "https://9ia11njxu4.execute-api.us-east-1.amazonaws.com/dev/get-all-users",
+        "banUserById": "https://9ia11njxu4.execute-api.us-east-1.amazonaws.com/dev/ban-user-by-id"
     }
 }
