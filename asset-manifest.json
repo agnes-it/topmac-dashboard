@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/topmac-dashboard/static/css/main.c653f7e3.chunk.css",
-    "main.js": "/topmac-dashboard/static/js/main.6ab9544d.chunk.js",
-    "main.js.map": "/topmac-dashboard/static/js/main.6ab9544d.chunk.js.map",
-    "runtime-main.js": "/topmac-dashboard/static/js/runtime-main.f92f0880.js",
-    "runtime-main.js.map": "/topmac-dashboard/static/js/runtime-main.f92f0880.js.map",
-    "static/css/2.ca573bc1.chunk.css": "/topmac-dashboard/static/css/2.ca573bc1.chunk.css",
-    "static/js/2.63627661.chunk.js": "/topmac-dashboard/static/js/2.63627661.chunk.js",
-    "static/js/2.63627661.chunk.js.map": "/topmac-dashboard/static/js/2.63627661.chunk.js.map",
-    "index.html": "/topmac-dashboard/index.html",
-    "precache-manifest.2bf06ee2e5b03a4b433ea9f9713e9dca.js": "/topmac-dashboard/precache-manifest.2bf06ee2e5b03a4b433ea9f9713e9dca.js",
-    "service-worker.js": "/topmac-dashboard/service-worker.js",
-    "static/css/2.ca573bc1.chunk.css.map": "/topmac-dashboard/static/css/2.ca573bc1.chunk.css.map",
-    "static/css/main.c653f7e3.chunk.css.map": "/topmac-dashboard/static/css/main.c653f7e3.chunk.css.map",
-    "static/js/2.63627661.chunk.js.LICENSE.txt": "/topmac-dashboard/static/js/2.63627661.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.c653f7e3.chunk.css",
+    "main.js": "/static/js/main.774960fb.chunk.js",
+    "main.js.map": "/static/js/main.774960fb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.210f2001.js",
+    "runtime-main.js.map": "/static/js/runtime-main.210f2001.js.map",
+    "static/css/2.ca573bc1.chunk.css": "/static/css/2.ca573bc1.chunk.css",
+    "static/js/2.63627661.chunk.js": "/static/js/2.63627661.chunk.js",
+    "static/js/2.63627661.chunk.js.map": "/static/js/2.63627661.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.560de18eab03c0c8131b0247f7eee48b.js": "/precache-manifest.560de18eab03c0c8131b0247f7eee48b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.ca573bc1.chunk.css.map": "/static/css/2.ca573bc1.chunk.css.map",
+    "static/css/main.c653f7e3.chunk.css.map": "/static/css/main.c653f7e3.chunk.css.map",
+    "static/js/2.63627661.chunk.js.LICENSE.txt": "/static/js/2.63627661.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f92f0880.js",
+    "static/js/runtime-main.210f2001.js",
     "static/css/2.ca573bc1.chunk.css",
     "static/js/2.63627661.chunk.js",
     "static/css/main.c653f7e3.chunk.css",
-    "static/js/main.6ab9544d.chunk.js"
+    "static/js/main.774960fb.chunk.js"
   ]
 }
