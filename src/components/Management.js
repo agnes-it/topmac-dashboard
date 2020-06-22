@@ -100,7 +100,7 @@ const GroupTable = ({ users, id, onDelete }) => {
                 <tbody>
                     {users.filter(user => !user.removed).map(({ phone_number, active, user_id, user }) => {
                         return (
-                            <tr key={phone_number}>
+                            <tr key={user_id}>
                                 <td>{user.name}</td>
                                 <td>{phone_number}</td>
                                 <td><span className={`tag ${active ? 'is-success' : 'is-danger'}`}>{active ? 'ativo' : 'inativo'}</span></td>
