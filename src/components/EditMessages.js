@@ -1,7 +1,6 @@
 import React from 'react';
 import config from '../config.json';
 import Loader from './Loader';
-import Modal from 'react-modal';
 
 const EditMessages = ({ shouldWarn, setShouldWarn }) => {
     const [ loading, setLoading ] = React.useState(true);
@@ -23,9 +22,9 @@ const EditMessages = ({ shouldWarn, setShouldWarn }) => {
                             throw(err);
                         }
                     );
+            setLoading(false);
         }
         getData();
-        setLoading(false);
     }, [loading]);
     
     const onSubmit = React.useCallback(async (event) => {

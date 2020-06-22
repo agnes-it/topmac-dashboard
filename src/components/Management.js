@@ -89,7 +89,22 @@ const CollapsibleTable = ({
     filter,
     onDelete
 }) => {
-    const productName = groupId === '-1001241265705' ? 'COMUNIDADE TOPMAC DE SINAIS E ACOMPANHAMENTOS' : 'Grupo de teste';
+    const [ name, setName ] = React.useState(null);
+
+    React.useEffect(() => {
+        async function fetchData() {
+            const res = await fetch(
+                `${api.getGroupNames}?groupId=${encodeURI(groupId)}`
+            ).then(res => res.json());
+
+            setName(res.body);
+        }
+        
+        fetchData();
+    }, [groupId]);
+
+    const nameFallback = groupId === '-1001241265705' ? 'COMUNIDADE TOPMAC DE SINAIS E ACOMPANHAMENTOS' : 'Carregando...';
+    const productName = name || nameFallback;
     const classname = "container has-background-info has-text-white";
     return (
         <Collapsible
