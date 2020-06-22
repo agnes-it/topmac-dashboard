@@ -34,7 +34,7 @@ const EditMessages = ({ shouldWarn, setShouldWarn }) => {
         setShouldWarn(false);
         let body = {};
         new FormData(event.target).forEach((value, key) => body[key] = value);
-        const saveUrl = 'https://71sxr3ih4k.execute-api.us-east-1.amazonaws.com/dev/save-config';
+        const saveUrl = config.api.save;
         await fetch(saveUrl, { method: 'POST', body: JSON.stringify(body) }).then(res => res.json());
         window.alert("dados salvos com sucesso!");
     }, [setShouldWarn]);
